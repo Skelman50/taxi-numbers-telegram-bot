@@ -18,18 +18,25 @@ const fetchTaxi = (bot, city, ct) => {
             const phonesSelector = '.blog-card_content-box'
             const { nameSraping, ratingScraping, phonesScraping } = dataScraping;
         
-            const filterNames = nameSraping(blogCardWrap, nameSelector)
+            const filterNames = nameSraping(blogCardWrap, nameSelector);
     
-            const filterRatings = ratingScraping(blogCardWrap, ratingSelector)
+            const filterRatings = ratingScraping(blogCardWrap, ratingSelector);
     
-            const taxiPhoneNumbers = phonesScraping(blogCardWrap, phonesSelector)
+            const taxiPhoneNumbers = phonesScraping(blogCardWrap, phonesSelector);
           
-            const taxi = sortTaxi(filterNames, filterRatings, taxiPhoneNumbers)
-    
-            const md = `
-            *Name:* _${taxi[0].name}_\n*Phones:* \n_${taxi[0].phones.join('\n')}_\n
-    *Name:* _${taxi[1].name}_\n*Phones:* \n_${taxi[1].phones.join('\n')}_
-        `;
+            const taxi = sortTaxi(filterNames, filterRatings, taxiPhoneNumbers);
+            let md;
+
+            if (taxi.length > 1) {
+                md = `
+                *Name:* _${taxi[0].name}_\n*Phones:* \n_${taxi[0].phones.join('\n')}_\n
+*Name:* _${taxi[1].name}_\n*Phones:* \n_${taxi[1].phones.join('\n')}_
+            `;
+            } else if(taxi.length === 1) {
+                md = `
+                *Name:* _${taxi[0].name}_\n*Phones:* \n_${taxi[0].phones.join('\n')}_
+                `;
+            }
     
             bot.sendMessage(ct.chat.id, md, {parse_mode: 'Markdown'})
         }
