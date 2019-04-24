@@ -2,7 +2,7 @@ const { transliterate } = require('transliteration');
 
 module.exports = function exceptions(city) {
   let cityInLatin = transliterate(city).toLocaleLowerCase();
-  switch (city) {
+  switch (city.toLocaleLowerCase()) {
     case 'черновцы':
       cityInLatin = 'chernovtsyi'.toLocaleLowerCase();
       return cityInLatin;

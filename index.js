@@ -12,7 +12,10 @@ bot.onText(/\/start/, (msg) => {
 
 bot.onText(/(.+)/, (ct) => {
   if (ct.text !== '/start' && ct.text.length < 20) {
-    const city = ct.text.split('').filter(item => item !== '/').join('');
+    const city = ct.text
+      .split('')
+      .filter(item => item !== '/')
+      .join('');
     fetchTaxi(bot, city, ct);
   }
 });
