@@ -1,5 +1,5 @@
-const regexNames = /т?акси/;
-const regexNamesLatin = /t?axi/;
+const regexNames = /такси/gi;
+const regexNamesLatin = /taxi/gi;
 const regexRatings = /[0-9]/;
 const regexPhones = /Минимальный/;
 const regexPhneCode = /\([0-9]{3,5}\)$/;
