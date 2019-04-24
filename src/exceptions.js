@@ -4,22 +4,22 @@ module.exports = function exceptions(city) {
   let cityInLatin = transliterate(city).toLocaleLowerCase();
   switch (city.toLocaleLowerCase()) {
     case 'черновцы':
-      cityInLatin = 'chernovtsyi'.toLocaleLowerCase();
+      cityInLatin = 'chernovtsyi';
       return cityInLatin;
     case 'сумы':
-      cityInLatin = 'sumyi'.toLocaleLowerCase();
+      cityInLatin = 'sumyi';
       return cityInLatin;
     case 'хмельницкий':
-      cityInLatin = 'hmelnitskiy'.toLocaleLowerCase();
+      cityInLatin = 'hmelnitskiy';
       return cityInLatin;
     case 'луцк':
-      cityInLatin = 'lutsk'.toLocaleLowerCase();
+      cityInLatin = 'lutsk';
       return cityInLatin;
     case 'черкассы':
-      cityInLatin = 'cherkassyi'.toLocaleLowerCase();
+      cityInLatin = 'cherkassyi';
       return cityInLatin;
     case 'кропивницкий':
-      cityInLatin = 'kropivnitskiy'.toLocaleLowerCase();
+      cityInLatin = 'kropivnitskiy';
       return cityInLatin;
     default:
       return cityInLatin;
